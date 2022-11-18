@@ -17,11 +17,12 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "email is required"],
-    validate: {
-      validator: (val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
-      message: "Please enter a valid email",
-    },
-    unique: true,
+    // validate: {
+    //   validator: (val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
+    //   message: "Please enter a valid email",
+    // },
+    match: [/.+\@.+\..+/, "please enter a valid email"],
+    unique: [true, "not unique"],
   },
   password: {
     type: String,

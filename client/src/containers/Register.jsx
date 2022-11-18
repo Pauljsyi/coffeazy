@@ -19,20 +19,43 @@ const Register = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/users/new", formData)
+      .post("http://localhost:8000/api/users/register", formData)
       .then((req, res) => {
-        console.log(formData);
+        console.log("user created");
+        // console.log(formData);
+        setFormData(formData);
+        navigate("/");
       })
       .catch((err) => {
-        console.log("error", err.response.data.validation_error);
+        console.log("create error");
+        const validateErr = err.response.data.validation_error.errors;
+        const duplicateErr = err.response.data.validation_error.code;
+        console.log({ err });
+        console.log({ validateErr });
+        console.log({ duplicateErr });
+        if (validateErr) {
+          return setError(validateErr);
+        } else if (duplicateErr === 11000) {
+          return setError({
+            email: {
+              name: "DuplicateError",
+              message:
+                "There is another user with that email, please choose a different email",
+            },
+          });
+        }
+        // console.log(err.response.data.validation_error);
+        // console.log(err.response.data.validation_error.errors);
+        // setError(err.response.data.validation_error.errors);
       });
+    setFormData(initialValue);
   };
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(formData);
+  // console.log(formData);
   return (
     <div>
       <h1>Register</h1>

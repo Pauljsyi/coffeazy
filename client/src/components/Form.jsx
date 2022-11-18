@@ -60,6 +60,9 @@ const Form = (props) => {
             onChange={changeHandler}
           />
         </div>
+        {error.password ? (
+          <span style={{ color: "red" }}>{error.password.message}</span>
+        ) : null}
         <div className="form-group">
           <label>confirm password:</label>
           <input
@@ -71,6 +74,9 @@ const Form = (props) => {
             onChange={changeHandler}
           />
         </div>
+        {error.confirmPassword ? (
+          <span style={{ color: "red" }}>{error.confirmPassword.message}</span>
+        ) : null}
         <div className="button-container">
           <Button type="submit">Submit</Button>
         </div>
