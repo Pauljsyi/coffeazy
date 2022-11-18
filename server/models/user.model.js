@@ -32,31 +32,44 @@ const UserSchema = new mongoose.Schema({
 });
 
 UserSchema.virtual("confirmPassword")
-  .get(() => {
-    this.confirm_password;
-  })
-  .set((value) => (this.confirm_password = value));
+  .get(() => this.confirmPassword)
+  .set((value) => (this.confirmPassword = value));
 
 UserSchema.pre("validate", function (next) {
-  if (this.password !== this.confirm_password) {
-    this.invalidate("confirm_password", "password must match confirm password");
+  // console.log(
+  //   "password: ",
+  //   this.password,
+  //   "confirmPassword: ",
+  //   this.confirmPassword
+  // );
+  if (this.password !== this.confirmPassword) {
+    this.invalidate("confirmPassword", "password must match confirm password");
   }
   next();
 });
 
-// // goes in user models
 UserSchema.pre("save", function (next) {
-  // const user = this;
-
   if (this.isModified("password")) {
-    bcrypt
-      .hash(this.password, saltRounds)
-      .then((hash) => (this.password = hash));
-    next();
-  } else {
-    next();
+    bcrypt.hash(this.password, 10).then((hash) => {
+      this.password = hash;
+      next();
+    });
   }
 });
+
+// // // goes in user models
+// UserSchema.pre("save", function (next) {
+//   // const user = this;
+
+//   if (this.isModified("password")) {
+//     bcrypt
+//       .hash(this.password, saltRounds)
+//       .then((hash) => (this.password = hash));
+//     next();
+//   } else {
+//     next();
+//   }
+// });
 
 const User = mongoose.model("User", UserSchema);
 

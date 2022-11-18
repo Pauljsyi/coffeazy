@@ -60,17 +60,17 @@ const Form = (props) => {
             onChange={changeHandler}
           />
         </div>
-        {/* <div className="form-group">
+        <div className="form-group">
           <label>confirm password:</label>
           <input
             className="form-control"
             type="text"
             placeholder="confirm password"
-            name="confirm_password"
-            value={formData.confirm_password}
+            name="confirmPassword"
+            value={formData.confirmPassword}
             onChange={changeHandler}
           />
-        </div> */}
+        </div>
         <div className="button-container">
           <Button type="submit">Submit</Button>
         </div>
