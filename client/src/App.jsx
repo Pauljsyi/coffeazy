@@ -5,6 +5,8 @@ import Register from "./containers/Register";
 import Login from "./containers/Login";
 import Header from "./components/Header";
 import Home from "./containers/Home";
+import Menu from "./containers/Menu";
+import Shop from "./containers/Shop";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
     </div>
   );

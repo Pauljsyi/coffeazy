@@ -1,6 +1,32 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+
+  /* background-color: black; */
+}
+
+.navbar {
+  background-color: #efefef;
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+form {
+  /* border: 1px solid black; */
+
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #efefef;
 }
