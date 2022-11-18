@@ -1,3 +1,7 @@
+/* font-family: 'Alexandria', sans-serif;
+font-family: 'Manrope', sans-serif;
+font-family: 'Mukta', sans-serif; */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,10 +9,6 @@
   text-align: center;
 
   /* background-color: black; */
-}
-
-.navbar {
-  background-color: #efefef;
 }
 
 #background-video {
@@ -29,4 +29,36 @@ form {
   padding: 50px;
   border-radius: 10px;
   background-color: #efefef;
+}
+
+.navbar {
+  background-color: #efefef;
+  height: 75px;
+  margin-bottom: 75px;
+}
+.navbar-expand .navbar-nav .dropdown-menu {
+  background-color: #efefef;
+}
+
+#cart {
+  width: 25px;
+}
+
+#logo-img {
+  position: absolute;
+  width: 250px;
+  top: -50px;
+}
+
+div #hero {
+  height: 90vh;
+  font-family: "Alexandria", sans-serif;
+}
+
+#hero img {
+  margin: 50px;
+}
+
+.sign-container {
+  margin: 50px 0;
 }

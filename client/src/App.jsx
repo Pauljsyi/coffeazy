@@ -8,10 +8,17 @@ import Home from "./containers/Home";
 import Menu from "./containers/Menu";
 import Shop from "./containers/Shop";
 
+import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
+
 function App() {
   return (
     <div className="App">
       <Header />
+
+      <video id="background-video" autoPlay muted loop width="1000px">
+        <source src={video} type="video/mp4" />
+        <source src={video} type="video/ogg" />
+      </video>
 
       <Routes>
         <Route path="/" element={<Home />} />

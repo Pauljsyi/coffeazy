@@ -39,7 +39,7 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
-    <form onSubmit={submitHandler}>
+    <form className="w-50 mx-auto" onSubmit={submitHandler}>
       <h1>Login</h1>
       <div className="form-group">
         <label>email:</label>
