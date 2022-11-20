@@ -27,7 +27,7 @@ const Slider = () => {
 
         <Carousel.Caption style={{ color: "black" }}>
           <h3>Try Our Local Bestseller</h3>
-          <p>and take a bag</p>
+          <p>take a bag</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
