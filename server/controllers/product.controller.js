@@ -20,5 +20,9 @@ module.exports.uploadNewProducts = (req, res, next) => {
       contentType: "image/png",
     },
   };
-  Product.create();
+  Product.create(obj)
+    .then((item) => {
+      res.redirect("/");
+    })
+    .catch((err) => console.log(err));
 };

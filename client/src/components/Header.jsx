@@ -16,6 +16,8 @@ const Header = () => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/menu">Menu</Nav.Link>
           <Nav.Link href="/shop">Shop Coffeazy</Nav.Link>
+          <Nav.Link href="/upload">Upload Product</Nav.Link>
+
           <NavDropdown id="nav-dropdown" title="Account">
             <Nav.Link href="/login">Log In</Nav.Link>
             <Nav.Link href="/register">Create Account</Nav.Link>

@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Home from "./containers/Home";
 import Menu from "./containers/Menu";
 import Shop from "./containers/Shop";
+import UploadProduct from "./components/UploadProduct";
 
 import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/upload" element={<UploadProduct />} />
       </Routes>
     </div>
   );
