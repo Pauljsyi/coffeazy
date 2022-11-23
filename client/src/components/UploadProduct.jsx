@@ -14,6 +14,7 @@ const initialValue = {
 const UploadProduct = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialValue);
+  //   const [newImage, setNewImage] = useState("");
   const [error, setError] = useState({});
 
   const submitHandler = (e) => {
@@ -26,7 +27,7 @@ const UploadProduct = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log("upload error");
+        console.log("upload error", err);
       });
   };
 
@@ -34,11 +35,15 @@ const UploadProduct = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const imageHandler = (e) => {
+    setFormData({ ...formData, image: e.target.files[0] });
+  };
+
   console.log(formData);
 
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} encType="multipart/form-data">
         <div className="form-group">
           <label>product name</label>
           <input
@@ -74,12 +79,12 @@ const UploadProduct = () => {
           <input
             type="file"
             name="image"
+            accept=".jpg, .png, .jpeg"
             className="form-control"
-            onChange={changeHandler}
-            value=""
+            onChange={imageHandler}
           />
         </div>
-        <Button>Upload</Button>
+        <Button type="submit">Upload</Button>
       </form>
     </div>
   );
