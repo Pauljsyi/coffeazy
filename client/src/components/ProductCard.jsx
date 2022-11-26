@@ -23,12 +23,15 @@ const ProductCard = (props) => {
     //     </div>
     //   </div>
     // </div>
-    <div className="flip-card-outer">
+    <div className="flip-card-outer ">
       <div className="flip-card-inner hover-trigger">
-        <div className="card front">
-          <div className="card-body d-flex justify-content-center align-items-center">
-            <p className="card-text fs-1 fw-bold">{card.image}</p>
-          </div>
+        <div className="card front border-0">
+          {/* <div className="card-body d-flex justify-content-center align-items-center"> */}
+          <img className="img-fluid w-100 h-100" src={card.image} alt="" />
+          {/* <p className="card-text fs-1 fw-bold">
+              <img className="w-100" src={card.image} alt="" />
+            </p> */}
+          {/* </div> */}
         </div>
         <div className="card back">
           <div className="card-body d-flex justify-content-center align-items-center">

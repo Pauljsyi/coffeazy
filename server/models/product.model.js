@@ -14,8 +14,7 @@ const ProductSchema = new mongoose.Schema({
     required: [true, "description is required"],
   },
   image: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
 });
 

@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 
 const initialValue = {
   product_name: "",
-  price: 0,
+  price: 1,
   description: "",
   image: "",
 };
@@ -18,6 +18,7 @@ const UploadProduct = () => {
   const [error, setError] = useState({});
 
   const submitHandler = (e) => {
+    console.log(formData);
     e.preventDefault();
     axios
       .post("http://localhost:8000/api/products/upload", formData)
@@ -36,10 +37,11 @@ const UploadProduct = () => {
   };
 
   const imageHandler = (e) => {
+    console.log(e.target.files[0]);
     setFormData({ ...formData, image: e.target.files[0] });
   };
 
-  console.log(formData);
+  //   console.log(formData);
 
   return (
     <div>

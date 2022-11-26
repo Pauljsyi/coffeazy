@@ -19,8 +19,9 @@ app.use(cors());
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 const AllUserRoutes = require("./routes/user.routes");
-// const AllCoffeeRoutes = require("./routes/coffee.routes");
-// AllCoffeeRoutes(app);
+const AllProductRoutes = require("./routes/product.routes");
+AllProductRoutes(app);
+
 AllUserRoutes(app);
 
 // set up multer for storing uploaded files
@@ -31,6 +32,7 @@ const storage = multer.diskStorage({
     cb(null, "uploads");
   },
   filename: (req, file, cb) => {
+    console.log("multer running: ", file);
     cb(null, file.fieldname + "-" + Date.now());
   },
 });
