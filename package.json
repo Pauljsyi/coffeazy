@@ -1,0 +1,25 @@
+{
+  "name": "coffeazy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client/ && npm run dev",
+    "server": "cd server/ && npm start",
+    "start": "concurrently \"npm run client\" \"npm run server\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pauljsyi/coffeazy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pauljsyi/coffeazy/issues"
+  },
+  "homepage": "https://github.com/pauljsyi/coffeazy#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
