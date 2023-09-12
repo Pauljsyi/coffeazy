@@ -14,26 +14,22 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav>
-          <Nav.Link>
-            <Link className="link" to="/">
-              Home
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link className="link" id="links" to="/menu">
-              Menu
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link className="link" to="/shop">
-              Shop Coffeazy
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link className="link" to="/upload">
-              Upload Product
-            </Link>
-          </Nav.Link>
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
+
+          <Link className="nav-link" to="/menu">
+            Menu
+          </Link>
+
+          <Link className="nav-link" to="/shop">
+            Shop Coffeazy
+          </Link>
+
+          <Link className="nav-link" to="/upload">
+            Upload Product
+          </Link>
+
           <DropDown />
 
           {/* <NavDropdown id="nav-dropdown" title="Account">

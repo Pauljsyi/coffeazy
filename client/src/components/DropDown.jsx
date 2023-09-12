@@ -6,22 +6,18 @@ const DropDown = () => {
   return (
     <>
       <NavDropdown id="nav-dropdown" title="Account">
-        <Nav.Link>
-          <Link className="link" href="/login">
-            Log In
-          </Link>
-        </Nav.Link>
-        <Nav.Link>
-          <Link className="link" href="/register">
-            Create Account
-          </Link>
-        </Nav.Link>
+        <Link className="nav-link" to="/login">
+          Log In
+        </Link>
+
+        <Link className="nav-link" to="/register">
+          Create Account
+        </Link>
         <NavDropdown.Divider />
-        <Nav.Link>
-          <Link className="link" href="/contact">
-            Contact us
-          </Link>
-        </Nav.Link>
+
+        <Link className="nav-link" to="/contact">
+          Contact us
+        </Link>
       </NavDropdown>
     </>
   );
