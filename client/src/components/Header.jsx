@@ -6,35 +6,30 @@ import FullNavigation from "./FullNavigation";
 import Hamburger from "./Hamburger";
 
 const Header = (props) => {
-  const width = props.width;
-  const [mobile, setMobile] = useState(false);
-  const isMobile = () => {
-    if (window.innerWidth > 769) {
-      return false;
+  const [width, setWidth] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(false);
+
+  function handleResize() {
+    if (width > 769) {
+      setWidth(window.innerWidth);
+      setIsMobile(false);
     } else {
-      return true;
+      setWidth(window.innerWidth);
+      setIsMobile(true);
     }
-  };
+  }
+
   useEffect(() => {
-    function handleResize() {
-      if (width > 769) {
-        setMobile(false);
-        window.localStorage.setItem("isMobile", false);
-      } else {
-        setMobile(true);
-        window.localStorage.setItem("isMobile", true);
-      }
-    }
+    handleResize();
     window.addEventListener("resize", handleResize);
   });
-  console.log(mobile);
   return (
     <Navbar className="navbar">
       <Container>
         <Navbar.Brand href="/">
           <img id="logo-img" src={logo} alt="logo" />
         </Navbar.Brand>
-        {isMobile() ? <Hamburger /> : <FullNavigation />}
+        {isMobile ? <Hamburger /> : <FullNavigation />}
       </Container>
     </Navbar>
   );

@@ -11,16 +11,9 @@ import UploadProduct from "./components/UploadProduct";
 import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
 
 function App() {
-  const [width, setWidth] = useState(window.localStorage.width);
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    window.localStorage.setItem("width", width);
-  });
-
-  console.log(width);
   return (
     <div className="App">
-      <Header width={[width, setWidth]} />
+      <Header />
 
       <video id="background-video" autoPlay muted loop width="1000px">
         <source src={video} type="video/mp4" />
