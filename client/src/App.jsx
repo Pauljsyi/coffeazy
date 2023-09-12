@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Register from "./views/Register";
@@ -11,9 +11,16 @@ import UploadProduct from "./components/UploadProduct";
 import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
 
 function App() {
+  const [width, setWidth] = useState(window.localStorage.width);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    window.localStorage.setItem("width", width);
+  });
+
+  console.log(width);
   return (
     <div className="App">
-      <Header />
+      <Header width={[width, setWidth]} />
 
       <video id="background-video" autoPlay muted loop width="1000px">
         <source src={video} type="video/mp4" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "../components/Slider";
 import Hero from "../components/Hero";
 import Hamburger from "../components/Hamburger";
@@ -8,7 +8,6 @@ const Home = () => {
     <div>
       <Hero />
       <Slider />
-      <Hamburger />
     </div>
   );
 };

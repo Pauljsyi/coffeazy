@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-import cart from "../assets/icons/cart.png";
+import Cart from "./Cart";
 import DropDown from "./DropDown";
 import NavItem from "./NavItem";
 
@@ -10,9 +10,7 @@ const FullNavigation = () => {
       <Nav>
         <NavItem />
         <DropDown />
-        <Nav.Link>
-          <img id="cart" src={cart} alt="cart" />
-        </Nav.Link>
+        <Cart />
       </Nav>
     </>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
+import hamburger from "../assets/icons/hamburger.svg";
 
 const Hamburger = () => {
   const getWindowSize = () => {
@@ -11,7 +12,12 @@ const Hamburger = () => {
   };
   return (
     <>
-      <NavDropdown id="nav-dropdown">
+      <NavDropdown
+        id="nav-dropdown"
+        title={
+          <img className="hamburger-svg" src={hamburger} alt="hamburger menu" />
+        }
+      >
         <Link className="nav-link" to="/">
           Home
         </Link>
