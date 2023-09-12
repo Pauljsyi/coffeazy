@@ -1,48 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
 import { Navbar, Nav, Container } from "react-bootstrap";
-import DropDown from "./DropDown";
 import logo from "../assets/img/logo/coffeazy-logo.png";
-import cart from "../assets/icons/cart.png";
+import FullNavigation from "./FullNavigation";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width > 769) {
+        setMobile(false);
+      } else {
+        setMobile(true);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+  });
+
+  console.log(mobile);
   return (
     <Navbar className="navbar">
       <Container>
         <Navbar.Brand href="/">
           <img id="logo-img" src={logo} alt="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav>
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-
-          <Link className="nav-link" to="/menu">
-            Menu
-          </Link>
-
-          <Link className="nav-link" to="/shop">
-            Shop Coffeazy
-          </Link>
-
-          <Link className="nav-link" to="/upload">
-            Upload Product
-          </Link>
-
-          <DropDown />
-
-          {/* <NavDropdown id="nav-dropdown" title="Account">
-            <Nav.Link href="/login">Log In</Nav.Link>
-            <Nav.Link href="/register">Create Account</Nav.Link>
-            <NavDropdown.Divider />
-            <Nav.Link href="/contact">Contact us</Nav.Link>
-          </NavDropdown> */}
-
-          <Nav.Link>
-            <img id="cart" src={cart} alt="cart" />
-          </Nav.Link>
-        </Nav>
+        {mobile ? <Hamburger /> : <FullNavigation />}
       </Container>
     </Navbar>
   );
