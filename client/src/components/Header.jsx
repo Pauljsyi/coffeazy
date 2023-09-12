@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import DropDown from "./DropDown";
 import logo from "../assets/img/logo/coffeazy-logo.png";
 import cart from "../assets/icons/cart.png";
 
@@ -13,17 +14,34 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav>
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/menu">Menu</Nav.Link>
-          <Nav.Link href="/shop">Shop Coffeazy</Nav.Link>
-          <Nav.Link href="/upload">Upload Product</Nav.Link>
+          <Nav.Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link className="link" id="links" to="/menu">
+              Menu
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link className="link" to="/shop">
+              Shop Coffeazy
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link className="link" to="/upload">
+              Upload Product
+            </Link>
+          </Nav.Link>
+          <DropDown />
 
-          <NavDropdown id="nav-dropdown" title="Account">
+          {/* <NavDropdown id="nav-dropdown" title="Account">
             <Nav.Link href="/login">Log In</Nav.Link>
             <Nav.Link href="/register">Create Account</Nav.Link>
             <NavDropdown.Divider />
             <Nav.Link href="/contact">Contact us</Nav.Link>
-          </NavDropdown>
+          </NavDropdown> */}
 
           <Nav.Link>
             <img id="cart" src={cart} alt="cart" />

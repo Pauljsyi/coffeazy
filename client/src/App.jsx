@@ -1,14 +1,13 @@
 import { useState } from "react";
 // import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Register from "./containers/Register";
-import Login from "./containers/Login";
+import Register from "./views/Register";
+import Login from "./views/Login";
 import Header from "./components/Header";
-import Home from "./containers/Home";
-import Menu from "./containers/Menu";
-import Shop from "./containers/Shop";
+import Home from "./views/Home";
+import Menu from "./views/Menu";
+import Shop from "./views/Shop";
 import UploadProduct from "./components/UploadProduct";
-
 import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
 
 function App() {
