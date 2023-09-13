@@ -33,9 +33,10 @@ const ProductCard = (props) => {
       <div className="flip-card-outer">
         <div className="flip-card-inner hover-trigger">
           <div className="card front border-0">
+            <h3>{coffee.title}</h3>
             <div className="card-body d-flex justify-content-center align-items-center">
               <img
-                className="img-fluid w-100 h-100"
+                className="coffee-img img-fluid w-100 h-100"
                 src={coffee.image}
                 alt=""
               />

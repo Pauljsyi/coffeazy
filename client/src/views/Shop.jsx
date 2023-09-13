@@ -45,15 +45,16 @@ const Shop = () => {
 
   console.log("coffee data from api: ", coffee);
   return (
-    <div className="container">
+    <div className="container row m-auto">
       <h1>Shop</h1>
-      <div className="row h-100">
-        {/* <div className="col d-flex flex-column flex-md-row justify-content-around align-items-center"> */}
+
+      {/* <div className="coffee-container row "> */}
+      <div className="row d-flex flex-column flex-md-row justify-content-around align-items-center">
         {coffee.map((item) => (
           <ProductCard key={item.id} coffee={item} />
         ))}
-        {/* </div> */}
       </div>
+      {/* </div> */}
     </div>
   );
 };

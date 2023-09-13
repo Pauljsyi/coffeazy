@@ -108,7 +108,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 350px;
-  height: 500px;
+  height: 350px;
   margin: 25px 0;
 
   &.focus-trigger:focus {
@@ -141,8 +141,8 @@ body {
 
       &.front {
         transform: rotateY(0);
-        background-color: #2d2d2d;
-        color: #fff;
+        background-color: #dedddc;
+        color: black;
       }
 
       &.back {
@@ -152,4 +152,16 @@ body {
       }
     }
   }
+}
+
+.coffee-img {
+  object-fit: cover;
+  border-radius: cover;
+  width: 50vw;
+  max-height: 30vh;
+}
+
+.coffee-container {
+  margin: 0 auto;
+  width: 100%;
 }

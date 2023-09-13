@@ -45,6 +45,7 @@ const UploadProduct = () => {
 
   return (
     <div>
+      <h3>Authorized owner page</h3>
       <form onSubmit={submitHandler} encType="multipart/form-data">
         <div className="form-group">
           <label>product name</label>
