@@ -5,8 +5,14 @@ import product1 from "../assets/img/products/Shutterstock_503987836.jpg";
 import product2 from "../assets/img/products/Shutterstock_499650232.jpg";
 
 const ProductCard = (props) => {
-  const { card } = props;
-  console.log(card);
+  const { coffee } = props;
+  // console.log("coffee from productcard comp: ", coffee.ingredients);
+  // const mappedIngredients = () => {
+  //   coffee.ingredients.map((i) => {
+  //     console.log("mapped ingredients: ", i);
+  //   });
+  // };
+
   return (
     // <div id="flip-card">
     //   <div className="flip-card-inner">
@@ -23,23 +29,34 @@ const ProductCard = (props) => {
     //     </div>
     //   </div>
     // </div>
-    <div className="flip-card-outer ">
-      <div className="flip-card-inner hover-trigger">
-        <div className="card front border-0">
-          {/* <div className="card-body d-flex justify-content-center align-items-center"> */}
-          <img className="img-fluid w-100 h-100" src={card.image} alt="" />
-          {/* <p className="card-text fs-1 fw-bold">
-              <img className="w-100" src={card.image} alt="" />
-            </p> */}
-          {/* </div> */}
-        </div>
-        <div className="card back">
-          <div className="card-body d-flex justify-content-center align-items-center">
-            <p className="card-text fs-1 fw-bold">{card.description}</p>
+    <>
+      <div className="flip-card-outer">
+        <div className="flip-card-inner hover-trigger">
+          <div className="card front border-0">
+            <div className="card-body d-flex justify-content-center align-items-center">
+              <img
+                className="img-fluid w-100 h-100"
+                src={coffee.image}
+                alt=""
+              />
+              {/* <p className="card-text fs-1 fw-bold">
+                <img className="w-100" src={coffee.image} alt="" />
+              </p> */}
+            </div>
+          </div>
+          <div className="card back">
+            <div className="card-body d-flex justify-content-center align-items-center">
+              <div>
+                <p className="card-text fs-5">{coffee.description}</p>
+                <p>
+                  <strong>Ingredients:</strong> {coffee.ingredients.join(", ")}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
