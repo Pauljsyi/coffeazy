@@ -19,6 +19,14 @@ const NavItem = () => {
       <Link className="nav-link" to="/upload">
         Upload Product
       </Link>
+
+      <Link className="nav-link" to="/login">
+        Log In
+      </Link>
+
+      <Link className="nav-link" to="/register">
+        Create Account
+      </Link>
     </>
   );
 };

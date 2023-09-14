@@ -12,6 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import NavItem from "./NavItem";
 import logo from "../assets/img/logo/coffeazy-logo.png";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const [showNavSecond, setShowNavSecond] = useState(false);
@@ -55,6 +56,7 @@ const Navbar = () => {
         >
           <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
             <NavItem />
+            <Cart />
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
