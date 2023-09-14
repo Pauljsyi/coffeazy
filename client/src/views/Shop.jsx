@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Container } from "react-bootstrap";
+
+import { Container, CardGroup } from "react-bootstrap";
 import ProductCard from "../components/ProductCard";
+import CardGrid from "../containers/CardGrid";
 import product1 from "../assets/img/products/Shutterstock_503987836.jpg";
 import product2 from "../assets/img/products/Shutterstock_1728710197.jpg";
 import product3 from "../assets/img/products/Shutterstock_499650232.jpg";
@@ -26,35 +27,18 @@ const cards = [
   },
 ];
 const Shop = () => {
-  const [coffee, setCoffee] = useState([]);
-  const getCoffee = async () => {
-    const res = await axios
-      .get("https://api.sampleapis.com/coffee/hot")
-      .then((res) => {
-        console.log(typeof res.data);
-        setCoffee(res.data);
-      })
-      .catch((e) => {
-        console.error("something went wrong ", e);
-      });
-  };
-
-  useEffect(() => {
-    getCoffee();
-  }, []);
-
-  console.log("coffee data from api: ", coffee);
   return (
     <div className="container row m-auto">
       <h1>Shop</h1>
 
       {/* <div className="coffee-container row "> */}
-      <div className="row d-flex flex-column flex-md-row justify-content-around align-items-center">
+      {/* <div className="row d-flex flex-column flex-md-row justify-content-around align-items-center">
         {coffee.map((item) => (
           <ProductCard key={item.id} coffee={item} />
         ))}
-      </div>
+      </div> */}
       {/* </div> */}
+      <CardGrid />
     </div>
   );
 };
