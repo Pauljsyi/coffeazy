@@ -104,55 +104,55 @@ body {
 //   height: 100vh;
 // }
 
-.flip-card-outer {
-  display: flex;
-  flex-direction: row;
-  width: 350px;
-  height: 350px;
-  margin: 25px 0;
+// .flip-card-outer {
+//   display: flex;
+//   flex-direction: row;
+//   width: 350px;
+//   height: 350px;
+//   margin: 25px 0;
 
-  &.focus-trigger:focus {
-    outline: 5px solid greenyellow;
-    outline-offset: 5px;
-  }
+//   &.focus-trigger:focus {
+//     outline: 5px solid greenyellow;
+//     outline-offset: 5px;
+//   }
 
-  .flip-card-inner {
-    transform-style: preserve-3d;
-    transition: 0.5s linear 0.1s;
-    position: relative;
-    width: inherit;
-    height: inherit;
+//   .flip-card-inner {
+//     transform-style: preserve-3d;
+//     transition: 0.5s linear 0.1s;
+//     position: relative;
+//     width: inherit;
+//     height: inherit;
 
-    &.hover-trigger:hover {
-      transform: rotateY(180deg);
-    }
+//     &.hover-trigger:hover {
+//       transform: rotateY(180deg);
+//     }
 
-    &.showBack {
-      transform: rotateY(180deg);
-    }
+//     &.showBack {
+//       transform: rotateY(180deg);
+//     }
 
-    .card {
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+//     .card {
+//       backface-visibility: hidden;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
 
-      &.front {
-        transform: rotateY(0);
-        background-color: #dedddc;
-        color: black;
-      }
+//       &.front {
+//         transform: rotateY(0);
+//         background-color: #dedddc;
+//         color: black;
+//       }
 
-      &.back {
-        transform: rotateY(180deg);
-        background-color: #fff;
-        color: #2d2d2d;
-      }
-    }
-  }
-}
+//       &.back {
+//         transform: rotateY(180deg);
+//         background-color: #fff;
+//         color: #2d2d2d;
+//       }
+//     }
+//   }
+// }
 
 .coffee-img {
   object-fit: cover;
@@ -165,3 +165,10 @@ body {
   margin: 0 auto;
   width: 100%;
 }
+
+// MEDIA QUERIES
+
+// .card-column {
+//   display: flex;
+//   justify-content: center;
+// }

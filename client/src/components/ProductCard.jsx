@@ -5,16 +5,8 @@ import product1 from "../assets/img/products/Shutterstock_503987836.jpg";
 import product2 from "../assets/img/products/Shutterstock_499650232.jpg";
 
 const ProductCard = (props) => {
-  const { coffee, key, idx } = props;
+  const { coffee, idx } = props;
   const [open, setOpen] = useState(false);
-  // console.log("coffee from productcard comp: ", coffee.ingredients);
-  // const mappedIngredients = () => {
-  //   coffee.ingredients.map((i) => {
-  //     console.log("mapped ingredients: ", i);
-  //   });
-  // };
-
-  console.log("product card  id", idx);
 
   return (
     <>
@@ -22,15 +14,15 @@ const ProductCard = (props) => {
         <Card
           style={{ width: "18rem" }}
           onClick={() => setOpen(!open)}
-          aria-controls="collapse-body"
-          aria-expanded={open}
+          // aria-controls="collapse-body"
+          // aria-expanded={open}
         >
-          <Card.Img variant="top" src={coffee.image} width={200} height={200} />
+          <Card.Img variant="top" src={coffee.image} width={250} height={250} />
           <Card.Body>
             <p>
               <Card.Title>{coffee.title}</Card.Title>
             </p>
-            <Collapse in={open}>
+            <Collapse in={open} mountOnEnter={open}>
               <div className="collapse" id="collapse-body">
                 <div>{coffee.description}</div>
                 <Button variant="primary">Add to Cart</Button>
