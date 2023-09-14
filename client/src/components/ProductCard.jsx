@@ -25,9 +25,8 @@ const ProductCard = (props) => {
             height={250}
           />
           <Card.Body>
-            <p>
-              <Card.Title>{coffee.title}</Card.Title>
-            </p>
+            <Card.Title>{coffee.title}</Card.Title>
+
             <Collapse in={open} mountOnEnter={open}>
               <div className="collapse" id="collapse-body">
                 <div>{coffee.description}</div>

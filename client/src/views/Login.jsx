@@ -88,7 +88,7 @@ const Login = () => {
       <Table className="d-flex justify-content-center" striped bordered hover>
         <tbody>
           {users.map((user, idx) => (
-            <tr key={user.id}>
+            <tr key={user._id}>
               <td>
                 {user.first_name} {user.last_name}
               </td>

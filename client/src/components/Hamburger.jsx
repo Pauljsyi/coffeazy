@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavDropdown } from "react-bootstrap";
+import { NavDropdown, Dropdown } from "react-bootstrap";
 import hamburger from "../assets/icons/hamburger.svg";
 
 const Hamburger = () => {
@@ -15,36 +15,44 @@ const Hamburger = () => {
       <NavDropdown
         id="nav-dropdown"
         title={
-          <img className="hamburger-svg" src={hamburger} alt="hamburger menu" />
+          <img
+            className="hamburger-svg"
+            width={30}
+            src={hamburger}
+            alt="hamburger menu"
+          />
         }
+        align="end"
       >
-        <Link className="nav-link" to="/">
-          Home
-        </Link>
+        <div className="mx-3">
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
 
-        <Link className="nav-link" to="/menu">
-          Menu
-        </Link>
+          <Link className="nav-link" to="/menu">
+            Menu
+          </Link>
 
-        <Link className="nav-link" to="/shop">
-          Shop Coffeazy
-        </Link>
+          <Link className="nav-link" to="/shop">
+            Shop Coffeazy
+          </Link>
 
-        <Link className="nav-link" to="/upload">
-          Upload Product
-        </Link>
-        <Link className="nav-link" to="/login">
-          Log In
-        </Link>
+          <Link className="nav-link" to="/upload">
+            Upload Product
+          </Link>
+          <Link className="nav-link" to="/login">
+            Log In
+          </Link>
 
-        <Link className="nav-link" to="/register">
-          Create Account
-        </Link>
-        <NavDropdown.Divider />
+          <Link className="nav-link" to="/register">
+            Create Account
+          </Link>
+          <NavDropdown.Divider />
 
-        <Link className="nav-link" to="/contact">
-          Contact us
-        </Link>
+          <Link className="nav-link" to="/contact">
+            Contact us
+          </Link>
+        </div>
       </NavDropdown>
     </>
   );
