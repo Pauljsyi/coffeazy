@@ -3,8 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const cors = require("cors");
 const bodyParser = require("body-parser");
-var firebase = require("firebase");
-var firebaseui = require("firebaseui");
+// const firebase = require("firebase");
+// const firebaseui = require("firebaseui");
 
 const fs = require("fs");
 const path = require("path");
