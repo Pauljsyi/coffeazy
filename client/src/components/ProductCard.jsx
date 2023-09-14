@@ -17,7 +17,13 @@ const ProductCard = (props) => {
           // aria-controls="collapse-body"
           // aria-expanded={open}
         >
-          <Card.Img variant="top" src={coffee.image} width={250} height={250} />
+          <Card.Img
+            className="card-img"
+            variant="top"
+            src={coffee.image}
+            width={250}
+            height={250}
+          />
           <Card.Body>
             <p>
               <Card.Title>{coffee.title}</Card.Title>
