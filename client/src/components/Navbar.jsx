@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="#">
+        <MDBNavbarBrand href="/">
           <img id="logo-img" src={logo} alt="logo" />
         </MDBNavbarBrand>
         {/* <MDBNavbarToggler
