@@ -6,6 +6,26 @@ const bodyParser = require("body-parser");
 // const firebase = require("firebase");
 // const firebaseui = require("firebaseui");
 
+// JWT
+
+const jwt = require("jsonwebtoken");
+const authorize = require("./jwt/auth-middleware");
+// DISCLAIMER: User should be authenticated first!!!
+app.get("/token", (req, res) => {
+  const payload = {
+    name: "Jimmy",
+    scopes: ["customer:create", "customer:read"],
+  };
+  const token = jwt.sign(payload, "my super secret key");
+  res.send(token);
+});
+
+app.get("/customer", authorize("customer:read"), (req, res) => {
+  res.send("customer info");
+});
+
+// JWT END
+
 const fs = require("fs");
 const path = require("path");
 require("dotenv/config");
