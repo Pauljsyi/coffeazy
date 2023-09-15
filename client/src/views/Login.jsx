@@ -15,7 +15,7 @@ const Login = () => {
   const [formData, setFormData] = useState(initialValue);
   const [error, setError] = useState({});
   const [passwordErr, setPasswordErr] = useState({});
-  const [users, setUsers] = useState([]);
+
   const submitHandler = (e) => {
     e.preventDefault();
     axios
@@ -36,6 +36,8 @@ const Login = () => {
       });
   };
 
+  // DISPLAY USERS FOR TESTING
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/users`)

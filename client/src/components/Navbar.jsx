@@ -11,7 +11,7 @@ import {
   MDBCollapse,
 } from "mdb-react-ui-kit";
 import NavItem from "./NavItem";
-import logo from "../assets/img/logo/coffeazy-logo.png";
+import logo from "../assets/img/logo/coffeazy-logos.png";
 import Cart from "./Cart";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="/">
+        <MDBNavbarBrand href="/" id="nav-brand">
           <img id="logo-img" src={logo} alt="logo" />
         </MDBNavbarBrand>
         {/* <MDBNavbarToggler
@@ -33,6 +33,7 @@ const Navbar = () => {
         <MDBNavbarToggler
           type="button"
           className="ms-auto"
+          id="hamburger-btn"
           data-target="#navbarToggleExternalContent"
           aria-controls="navbarToggleExternalContent"
           aria-expanded="false"

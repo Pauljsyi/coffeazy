@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Navbar, Container } from "react-bootstrap";
-import logo from "../assets/img/logo/coffeazy-logo.png";
+import logo from "../assets/img/logo/coffeazy-logos.png";
 import FullNavigation from "./FullNavigation";
 import Hamburger from "./Hamburger";
 
