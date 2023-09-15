@@ -5,7 +5,7 @@ import logo from "../assets/img/logo/coffeazy-logos.png";
 import FullNavigation from "./FullNavigation";
 import Hamburger from "./Hamburger";
 
-const Header = (props) => {
+const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [isMobile, setIsMobile] = useState(false);
 
