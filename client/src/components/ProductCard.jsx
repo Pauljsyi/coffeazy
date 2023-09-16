@@ -10,7 +10,7 @@ const ProductCard = (props) => {
 
   return (
     <>
-      <Col key={idx}>
+      <Col key={idx} className="d-flex justify-content-center">
         <Card
           style={{ width: "18rem" }}
           onClick={() => setOpen(!open)}

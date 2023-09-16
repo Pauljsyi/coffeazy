@@ -28,7 +28,7 @@ const cards = [
 ];
 const Shop = () => {
   return (
-    <div className="container row m-auto">
+    <div className="container row mx-auto d-flex justify-content-center">
       <h1>Shop</h1>
 
       {/* <div className="coffee-container row "> */}

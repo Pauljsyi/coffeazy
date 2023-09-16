@@ -22,13 +22,7 @@ const CardGrid = () => {
   }, []);
   return (
     <>
-      <Row
-        xs={1}
-        md={2}
-        lg={3}
-        xl={4}
-        className="g-4 d-flex justify-content-center"
-      >
+      <Row md={1} lg={2} xl={3} className="g-4 ">
         {coffee.map((item, idx) => (
           <ProductCard key={item.id} idx={idx} coffee={item} />
         ))}
