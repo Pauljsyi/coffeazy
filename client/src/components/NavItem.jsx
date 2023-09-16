@@ -13,7 +13,7 @@ const NavItem = () => {
       </Link>
 
       <Link className="nav-link" to="/shop">
-        Shop Coffeazy
+        Coffeazy Merch
       </Link>
 
       <Link className="nav-link" to="/upload">
