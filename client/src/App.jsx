@@ -31,7 +31,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/merch" element={<Shop />} />
         <Route path="/upload" element={<UploadProduct />} />
       </Routes>
     </div>
