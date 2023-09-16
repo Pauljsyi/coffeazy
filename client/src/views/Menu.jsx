@@ -1,11 +1,14 @@
-import React from "react";
-import { Image } from "react-bootstrap";
-import MenuImg from "../assets/img/menu/cafe-menu.png";
+import React, { useState, useEffect } from "react";
+import { Container, CardGroup } from "react-bootstrap";
+import ProductCard from "../components/ProductCard";
+import CardGrid from "../containers/CardGrid";
 
 const Menu = () => {
   return (
-    <div>
-      <Image className="w-50" src={MenuImg} alt="menu" />
+    <div className="container row mx-auto d-flex justify-content-center">
+      <h1>Menu</h1>
+
+      <CardGrid />
     </div>
   );
 };

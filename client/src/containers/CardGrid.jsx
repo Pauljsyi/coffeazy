@@ -17,12 +17,25 @@ const CardGrid = () => {
       });
   };
 
+  //   const getCoffee = async () => {
+  //   const res = await axios
+  //     .get("https://api.sampleapis.com/coffee/iced")
+  //     .then((res) => {
+  //       console.log(typeof res.data);
+  //       setCoffee(res.data);
+  //     })
+  //     .catch((e) => {
+  //       console.error("something went wrong ", e);
+  //     });
+  // };
+
   useEffect(() => {
     getCoffee();
   }, []);
+  console.log(coffee);
   return (
     <>
-      <Row md={1} lg={2} xl={3} className="g-4 ">
+      <Row sm={1} md={2} xl={3} xxl={4} className="g-4">
         {coffee.map((item, idx) => (
           <ProductCard key={item.id} idx={idx} coffee={item} />
         ))}
