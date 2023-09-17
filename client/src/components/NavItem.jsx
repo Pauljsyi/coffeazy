@@ -13,7 +13,7 @@ const NavItem = () => {
         Menu
       </Link>
 
-      <Link className="nav-link" to="/shop">
+      <Link className="nav-link" to="/merch">
         Coffeazy Merch
       </Link>
 
