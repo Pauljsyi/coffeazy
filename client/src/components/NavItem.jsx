@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cart from "../assets/icons/cart.png";
 
 const NavItem = () => {
   return (
@@ -26,6 +27,10 @@ const NavItem = () => {
 
       <Link className="nav-link" to="/register">
         Create Account
+      </Link>
+
+      <Link className="nav-link" to="/cart">
+        <img id="cart" src={cart} alt="cart" />
       </Link>
     </>
   );

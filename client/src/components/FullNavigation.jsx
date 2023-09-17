@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-import Cart from "./Cart";
+import Cart from "../views/Cart";
 import DropDown from "./DropDown";
 import NavItem from "./NavItem";
 

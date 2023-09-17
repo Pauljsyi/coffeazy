@@ -13,28 +13,42 @@ import UploadProduct from "./components/UploadProduct";
 import video from "./assets/videos/Nicole-Coffee-Cinemagraph.mp4";
 import HamburgerNav from "./components/HamburgerNav";
 import Navbar from "./components/Navbar";
+import Cart from "./views/Cart";
+import Cancel from "./views/Cancel";
+
+// STRIPE
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(
+  "pk_test_51M8pJEJgWPjDbO5ajjTUurLefpF4RadjTlOsCpmT4Yaw2SHJlaCK0PhuUOuFwFtvHQaYG7v23X8uj6G8pb3VBAj600UE3G7yPU"
+);
 
 function App() {
+  const options = {
+    // passing the client secret obtained from the server
+    // clientSecret: "CLIENT_SECRET",
+  };
   return (
-    <div className="App">
-      {/* <Header /> */}
-      <Navbar />
-      {/* <HamburgerNav /> */}
+    <Elements stripe={stripePromise} options={options}>
+      <div className="App">
+        <Navbar />
+        <video id="background-video" autoPlay muted loop width="1000px">
+          <source src={video} type="video/mp4" />
+          <source src={video} type="video/ogg" />
+        </video>
 
-      <video id="background-video" autoPlay muted loop width="1000px">
-        <source src={video} type="video/mp4" />
-        <source src={video} type="video/ogg" />
-      </video>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/merch" element={<Shop />} />
-        <Route path="/upload" element={<UploadProduct />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/merch" element={<Shop />} />
+          <Route path="/upload" element={<UploadProduct />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cancel" element={<Cancel />} />
+        </Routes>
+      </div>
+    </Elements>
   );
 }
 
