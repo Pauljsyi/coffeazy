@@ -3,7 +3,7 @@ import axios from "axios";
 import { Row } from "react-bootstrap";
 import ProductCard from "../components/ProductCard";
 const url = "https://api.sampleapis.com/coffee/hot";
-const url2 = "http://localhost:8000/coffee";
+const url2 = "https://coffee-express-api.onrender.com/coffee";
 
 const CardGrid = () => {
   const [coffee, setCoffee] = useState([]);
