@@ -6,6 +6,10 @@ const bodyParser = require("body-parser");
 // const firebase = require("firebase");
 // const firebaseui = require("firebaseui");
 
+app.get("/", (req, res) => {
+  res.send({ message: "API working" });
+});
+
 // JWT
 
 const jwt = require("jsonwebtoken");
