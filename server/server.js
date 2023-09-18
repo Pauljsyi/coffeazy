@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   try {
     res.send("Express");
   } catch (error) {
-    res.status(404).send({ error: error });
+    res.status(401).send({ error: error });
   }
 });
 
