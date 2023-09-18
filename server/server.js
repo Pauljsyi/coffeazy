@@ -7,11 +7,7 @@ const bodyParser = require("body-parser");
 // const firebaseui = require("firebaseui");
 
 app.get("/", (req, res) => {
-  try {
-    res.send("Express");
-  } catch (error) {
-    res.status(401).send({ error: error });
-  }
+  res.send("Express");
 });
 
 // JWT
