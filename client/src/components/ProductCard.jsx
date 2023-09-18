@@ -29,7 +29,10 @@ const ProductCard = (props) => {
 
             <Collapse in={open} mountOnEnter={open}>
               <div className="collapse" id="collapse-body">
-                <div>{coffee.description}</div>
+                <p>{coffee.description}</p>
+                <span>
+                  <p>${coffee.price}</p>
+                </span>
                 <Button variant="primary">Add to Cart</Button>
               </div>
             </Collapse>

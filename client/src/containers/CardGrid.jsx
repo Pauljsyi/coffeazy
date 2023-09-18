@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Row } from "react-bootstrap";
 import ProductCard from "../components/ProductCard";
+const url = "https://api.sampleapis.com/coffee/hot";
+const url2 = "http://localhost:8000/coffee";
 
 const CardGrid = () => {
   const [coffee, setCoffee] = useState([]);
   const getCoffee = async () => {
     const res = await axios
-      .get("https://api.sampleapis.com/coffee/hot")
+      .get(url2)
       .then((res) => {
-        console.log(typeof res.data);
+        console.log("response from axios", res.data);
         setCoffee(res.data);
       })
       .catch((e) => {

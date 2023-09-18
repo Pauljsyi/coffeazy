@@ -30,25 +30,25 @@ function App() {
   };
   return (
     <Elements stripe={stripePromise} options={options}>
-      <CartProvider>
-        <div className="App">
-          <video id="background-video" autoPlay muted loop width="1000px">
-            <source src={video} type="video/mp4" />
-            <source src={video} type="video/ogg" />
-          </video>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/merch" element={<Shop />} />
-            <Route path="/upload" element={<UploadProduct />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/cancel" element={<Cancel />} />
-          </Routes>
-        </div>
-      </CartProvider>
+      {/* <CartProvider> */}
+      <div className="App">
+        <video id="background-video" autoPlay muted loop width="1000px">
+          <source src={video} type="video/mp4" />
+          <source src={video} type="video/ogg" />
+        </video>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/merch" element={<Shop />} />
+          <Route path="/upload" element={<UploadProduct />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cancel" element={<Cancel />} />
+        </Routes>
+      </div>
+      {/* </CartProvider> */}
     </Elements>
   );
 }

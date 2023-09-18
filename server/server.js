@@ -41,8 +41,8 @@ app.use(cors());
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 const AllUserRoutes = require("./routes/user.routes");
-const AllProductRoutes = require("./routes/product.routes");
-AllProductRoutes(app);
+const AllCoffeeRoutes = require("./routes/coffee.routes");
+AllCoffeeRoutes(app);
 
 AllUserRoutes(app);
 
