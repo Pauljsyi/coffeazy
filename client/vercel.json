@@ -1,12 +1,1 @@
-{
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/menu", "dest": "/" },
-    { "src": "/merch", "dest": "/" },
-    { "src": "/upload", "dest": "/" },
-    { "src": "/cart", "dest": "/" },
-    { "src": "/register", "dest": "/" },
-    { "src": "/login", "dest": "/" },
-    { "src": "/cancel", "dest": "/" }
-  ]
-}
+{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
