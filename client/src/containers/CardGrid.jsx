@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import ProductCard from "../components/ProductCard";
 const url = "https://api.sampleapis.com/coffee/hot";
 const url2 = "https://coffee-express-api.onrender.com/coffee";
+const text_url = "localhost:8000/coffee";
 
 const CardGrid = () => {
   const [coffee, setCoffee] = useState([]);
@@ -11,7 +12,7 @@ const CardGrid = () => {
     const res = await axios
       .get(url2)
       .then((res) => {
-        console.log("response from axios", res.data);
+        // console.log("response from axios", res.data);
         setCoffee(res.data);
       })
       .catch((e) => {
@@ -34,14 +35,14 @@ const CardGrid = () => {
   useEffect(() => {
     getCoffee();
   }, []);
-  console.log(coffee);
+  // console.log(coffee);
   return (
     <>
-      <Row sm={1} md={2} xl={3} xxl={4} className="g-4">
+      <Col className=" g-4 d-flex flex-wrap">
         {coffee.map((item, idx) => (
           <ProductCard key={item.id} idx={idx} coffee={item} />
         ))}
-      </Row>
+      </Col>
     </>
   );
 };

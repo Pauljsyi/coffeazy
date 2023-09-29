@@ -23,33 +23,35 @@ const stripePromise = loadStripe(
   "pk_test_51M8pJEJgWPjDbO5ajjTUurLefpF4RadjTlOsCpmT4Yaw2SHJlaCK0PhuUOuFwFtvHQaYG7v23X8uj6G8pb3VBAj600UE3G7yPU"
 );
 
+import CartProvider from "./context/CartContext";
+
 function App() {
   const options = {
     // passing the client secret obtained from the server
     // clientSecret: "CLIENT_SECRET",
   };
   return (
-    <Elements stripe={stripePromise} options={options}>
-      {/* <CartProvider> */}
-      <div className="App">
-        <video id="background-video" autoPlay muted loop width="1000px">
-          <source src={video} type="video/mp4" />
-          <source src={video} type="video/ogg" />
-        </video>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/merch" element={<Shop />} />
-          <Route path="/upload" element={<UploadProduct />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/cancel" element={<Cancel />} />
-        </Routes>
-      </div>
-      {/* </CartProvider> */}
-    </Elements>
+    <CartProvider>
+      <Elements stripe={stripePromise} options={options}>
+        <div className="App">
+          <video id="background-video" autoPlay muted loop width="1000px">
+            <source src={video} type="video/mp4" />
+            <source src={video} type="video/ogg" />
+          </video>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/merch" element={<Shop />} />
+            <Route path="/upload" element={<UploadProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/cancel" element={<Cancel />} />
+          </Routes>
+        </div>
+      </Elements>
+    </CartProvider>
   );
 }
 

@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import cn from "classnames";
 import { Button, Card, Col, Collapse } from "react-bootstrap";
 import product1 from "../assets/img/products/Shutterstock_503987836.jpg";
 import product2 from "../assets/img/products/Shutterstock_499650232.jpg";
+import { CartContext } from "../context/CartContext";
 
 const ProductCard = (props) => {
+  const cart = useContext(CartContext);
   const { coffee, idx } = props;
   const [open, setOpen] = useState(false);
+  console.log(cart.items);
+
+  const productQuantity = cart.getProductQuantity(coffee.id);
+  // console.log("cart items", cart.items);
 
   return (
     <>
       <Col key={idx} align="center">
         <Card
+          key={idx}
+          className="m-2"
           style={{ width: "18rem" }}
-          onClick={() => setOpen(!open)}
+
           // aria-controls="collapse-body"
           // aria-expanded={open}
         >
@@ -23,7 +31,12 @@ const ProductCard = (props) => {
             src={coffee.image}
             width={250}
             height={250}
+            onClick={() => {
+              setOpen(!open);
+              // console.log("you didnt click the actual button");
+            }}
           />
+
           <Card.Body>
             <Card.Title>{coffee.title}</Card.Title>
 
@@ -33,7 +46,15 @@ const ProductCard = (props) => {
                 <span>
                   <p>${coffee.price}</p>
                 </span>
-                <Button variant="primary">Add to Cart</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    cart.addOneToCart(coffee.id);
+                    // console.log("coffee id", coffee.id);
+                  }}
+                >
+                  Add to Cart
+                </Button>
               </div>
             </Collapse>
           </Card.Body>

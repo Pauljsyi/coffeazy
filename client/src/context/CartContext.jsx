@@ -1,7 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import axios from "axios";
+const url2 = "https://coffee-express-api.onrender.com/coffee";
 // import { productsArray, getProductData } from "./productsStore";
+// import getCoffeeData from "../helpers/GetCoffeeData";
 
 export const CartContext = createContext({
+  coffee: [],
   items: [],
   getProductQuantity: () => {},
   addOneToCart: () => {},
@@ -11,9 +15,38 @@ export const CartContext = createContext({
 });
 
 export function CartProvider({ children }) {
+  const [coffee, setCoffee] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+
   // ex. cart object
   // [{ id: 1, quantity: 2 }]
+  const getCoffee = async () => {
+    const res = await axios
+      .get(url2)
+      .then((res) => {
+        // console.log("response from axios", res.data);
+        setCoffee(res.data);
+      })
+      .catch((e) => {
+        console.error("something went wrong ", e);
+      });
+  };
+  useEffect(() => {
+    getCoffee();
+  }, []);
+
+  function getCoffeeData(id) {
+    // console.log("coffee");
+    let coffeeData = coffee.find((coffee) => coffee.id === id);
+    // console.log(coffeeData);
+
+    if (coffeeData == undefined) {
+      console.log("coffee data does not exist for ID: " + id);
+      return undefined;
+    }
+
+    return coffeeData;
+  }
 
   function getProductQuantity(id) {
     // ? runs the method appended after the ? if product is a valid object.
@@ -29,6 +62,7 @@ export function CartProvider({ children }) {
 
   function addOneToCart(id) {
     const quantity = getProductQuantity(id);
+    console.log("this is running");
 
     if (quantity === 0) {
       //product is not in cart
@@ -76,11 +110,12 @@ export function CartProvider({ children }) {
   function getTotalCost() {
     let totalCost = 0;
     cartProducts.map((cartItem) => {
-      const productData = getProductData(cartItem.id);
+      const productData = getCoffeeData(cartItem.id);
       totalCost += productData.price * cartItem.quantity;
     });
   }
   const contextValue = {
+    coffee: getCoffeeData(),
     items: cartProducts,
     getProductQuantity,
     addOneToCart,
