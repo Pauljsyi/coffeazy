@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import cart from "../assets/icons/cart.png";
+import cartImg from "../assets/icons/cart.png";
+import { Navbar, Button } from "react-bootstrap";
+import CartModal from "./CartModal";
 
-const NavItem = () => {
+const NavItem = (props) => {
+  const { coffeeCount, cart, showCart, handleOpen, handleClose, toggleOpen } =
+    props;
+
+  console.log(showCart);
+
   return (
     <>
       <Link className="nav-link" to="/">
@@ -29,9 +36,10 @@ const NavItem = () => {
         Create Account
       </Link>
 
-      <Link className="nav-link" to="/cart">
-        <img id="cart" src={cart} alt="cart" />
-      </Link>
+      <Button className="nav-link" onClick={toggleOpen}>
+        <img id="cart" src={cartImg} alt="cart" />
+        <p>{coffeeCount} items</p>
+      </Button>
     </>
   );
 };

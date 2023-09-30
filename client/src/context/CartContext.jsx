@@ -5,6 +5,7 @@ const url2 = "https://coffee-express-api.onrender.com/coffee";
 // import getCoffeeData from "../helpers/GetCoffeeData";
 
 export const CartContext = createContext({
+  getCoffeeData: () => {},
   coffee: [],
   items: [],
   getProductQuantity: () => {},
@@ -36,7 +37,7 @@ export function CartProvider({ children }) {
   }, []);
 
   function getCoffeeData(id) {
-    // console.log("coffee");
+    console.log("id in getcoffee data", id.quantity);
     let coffeeData = coffee.find((coffee) => coffee.id === id);
     // console.log(coffeeData);
 
@@ -113,9 +114,10 @@ export function CartProvider({ children }) {
       const productData = getCoffeeData(cartItem.id);
       totalCost += productData.price * cartItem.quantity;
     });
+    return totalCost;
   }
   const contextValue = {
-    coffee: getCoffeeData(),
+    getCoffeeData: getCoffeeData,
     items: cartProducts,
     getProductQuantity,
     addOneToCart,

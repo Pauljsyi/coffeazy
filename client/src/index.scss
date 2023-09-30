@@ -13,6 +13,50 @@ body {
 
   /* background-color: black; */
 }
+#portal {
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-container {
+  transform: translate(100%, 0%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin: auto;
+  // height: 1000px;
+  // width: 500px;
+  background-color: white;
+  z-index: 2000;
+  color: black;
+}
+
+.modal-head {
+  margin-top: 20px;
+}
+
+.modal-head,
+.modal-body {
+  padding: 50px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 200;
+  // overflow: visible;
+}
 
 #background-video {
   width: 100vw;
